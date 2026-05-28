@@ -1,9 +1,11 @@
-import Image from "next/image";
+import Section from "@/layout/Section";
 
 export default function Home() {
   return (
     <main>
-      <h1>Vilizar's Portfolio</h1>
+      <Section>
+        <h1>Vilizar's Portfolio</h1>
+      </Section>
     </main>
   );
 }
