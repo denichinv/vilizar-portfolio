@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, Geist, JetBrains_Mono } from "next/font/google";
 import "../styles/globals.css";
+import Navbar from "@/components/layout/Navbar";
 
 const geist = Geist({
   variable: "--font-geist",
@@ -34,7 +35,10 @@ export default function RootLayout({
       lang="en"
       className={`${geist.variable} ${jetbrainsMono.variable} ${dmSerif.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
