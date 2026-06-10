@@ -1,12 +1,10 @@
-import Section from "@/components/layout/Section";
+import Hero from "@/components/sections/Hero";
 
 export default function Home() {
   return (
     <>
       <main>
-        <Section>
-          <h1>Vilizar's Portfolio</h1>
-        </Section>
+        <Hero />
       </main>
     </>
   );
