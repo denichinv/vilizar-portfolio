@@ -1,4 +1,7 @@
+"use client";
 import Section from "@/components/layout/Section";
+import { fadeInUp, staggerContainer } from "@/lib/motion";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -7,20 +10,37 @@ export default function Hero() {
 
       <div className="hero-grid absolute inset-0 -z-10" />
 
-      <div className="max-w-3xl">
-        <p className="mb-4 text-sm uppercase tracking-[0.25em] text-[color:var(--accent)]">
+      <motion.div
+        className="max-w-3xl"
+        variants={staggerContainer}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.p
+          variants={fadeInUp}
+          className="mb-4 text-sm uppercase tracking-[0.25em] text-[color:var(--accent)]"
+        >
           Front-End Developer
-        </p>
+        </motion.p>
 
-        <h1 className="text-5xl tracking-[-0.03em] text-[color:var(--text-heading)] md:text-7xl">
+        <motion.h1
+          variants={fadeInUp}
+          className="text-5xl tracking-[-0.03em] text-[color:var(--text-heading)] md:text-7xl"
+        >
           Building interfaces that work.
-        </h1>
+        </motion.h1>
 
-        <p className="mt-6 max-w-2xl text-lg leading-8">
+        <motion.p
+          variants={fadeInUp}
+          className="mt-6 max-w-2xl text-lg leading-8"
+        >
           Front-End Developer · React · TypeScript · Next.js
-        </p>
+        </motion.p>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+        <motion.div
+          variants={fadeInUp}
+          className="mt-10 flex flex-col gap-4 sm:flex-row"
+        >
           <a
             href="#work"
             className="inline-flex h-11 items-center justify-center rounded-[var(--radius-sm)] bg-[color:var(--accent)] px-6 text-sm font-medium text-black transition-opacity duration-200 hover:opacity-90"
@@ -36,8 +56,8 @@ export default function Hero() {
           >
             Download CV
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </Section>
   );
 }
