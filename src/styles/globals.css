@@ -83,3 +83,70 @@ video {
   background: var(--accent);
   color: var(--bg);
 }
+
+.hero-background {
+  background:
+    radial-gradient(
+      circle at 18% 22%,
+      rgba(0, 229, 160, 0.13) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 72% 8%,
+      rgba(0, 229, 160, 0.06) 0%,
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 55% 75%,
+      rgba(59, 130, 246, 0.06) 0%,
+      transparent 35%
+    );
+  animation: orb-pulse 14s ease-in-out infinite;
+}
+
+@keyframes orb-pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(0, 229, 160, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 160, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(
+    ellipse 70% 60% at 30% 40%,
+    black 0%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 60% at 30% 40%,
+    black 0%,
+    transparent 100%
+  );
+  animation: grid-drift 18s linear infinite;
+}
+
+@keyframes grid-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 48px 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-background {
+    animation: none;
+    opacity: 0.85;
+  }
+  .hero-grid {
+    animation: none;
+  }
+}
