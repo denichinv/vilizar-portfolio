@@ -1,17 +1,19 @@
 "use client";
+
+import { motion } from "framer-motion";
+
 import Section from "@/components/layout/Section";
 import { fadeInUp, staggerContainer } from "@/lib/motion";
-import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <Section className="relative overflow-hidden pb-24 pt-36 md:pb-32 md:pt-44">
-      <div className="hero-background absolute inset-0 -z-20" />
+    <Section className="relative z-0 overflow-hidden pb-24 pt-36 md:pb-32 md:pt-44">
+      <div className="hero-background absolute inset-0 z-0" />
 
-      <div className="hero-grid absolute inset-0 -z-10" />
+      <div className="hero-grid absolute inset-0 z-10" />
 
       <motion.div
-        className="max-w-3xl"
+        className="relative z-20 max-w-3xl"
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
