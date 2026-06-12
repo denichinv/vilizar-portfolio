@@ -26,18 +26,18 @@ export default function Navbar() {
             About
           </a>
           <a
-            href="mailto:denichinv@gmail.com"
+            href="//#contact"
             className="transition hover:text-[color:var(--text-heading)]"
           >
             Contact
           </a>
           <a
-            href="/cv.pdf"
+            href="https://calendly.com/vilizar"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-[var(--radius-sm)] border border-[color:var(--border)] px-3 py-2 text-[color:var(--text-heading)] transition hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]"
           >
-            Download CV
+            Book a Call
           </a>
         </div>
       </nav>
