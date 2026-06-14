@@ -26,7 +26,7 @@ export default function Navbar() {
             About
           </a>
           <a
-            href="//#contact"
+            href="#contact"
             className="transition hover:text-[color:var(--text-heading)]"
           >
             Contact
