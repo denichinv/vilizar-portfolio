@@ -1,5 +1,5 @@
 import ProjectHighlightCard from "./ui/ProjectHighlightCard";
-import { featuredProjects } from "@/data/featuredProjects";
+import { featuredProjects } from "@/data/Projects";
 import Section from "../layout/Section";
 
 export default function EngineeringHighlights() {

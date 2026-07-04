@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SiGithub } from "@icons-pack/react-simple-icons";
-import type { FeaturedProject } from "@/data/featuredProjects";
+import type { FeaturedProject } from "@/data/Projects";
+import Badge from "./Badge";
 
 export default function ProjectHighlightCard({
   title,
@@ -53,12 +54,7 @@ export default function ProjectHighlightCard({
 
         <ul className="mt-5 flex flex-wrap gap-2">
           {badges.map((badge) => (
-            <li
-              key={badge}
-              className="rounded-full border border-[color:var(--border)] px-3 py-1 text-xs text-[color:var(--text-muted)] bg-[color:var(--bg)] transition-colors hover:border-[color:var(--accent)] hover:text-[color:var(--text-heading)] "
-            >
-              {badge}
-            </li>
+            <Badge key={badge}>{badge}</Badge>
           ))}
         </ul>
 
