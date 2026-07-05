@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SiGithub } from "@icons-pack/react-simple-icons";
+import { FaGithub } from "react-icons/fa";
 import type { FeaturedProject } from "@/data/Projects";
 import Badge from "./Badge";
 
@@ -75,7 +75,7 @@ export default function ProjectHighlightCard({
             aria-label={`${title} GitHub repository`}
             className={`${linkStyle} flex items-center gap-1.5`}
           >
-            <SiGithub size={24} aria-hidden="true" />
+            <FaGithub size={24} aria-hidden="true" />
           </a>
 
           <Link href={`/projects/${caseStudy}`} className={linkStyle}>

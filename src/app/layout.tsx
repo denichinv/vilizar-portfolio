@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Serif_Display, Geist, JetBrains_Mono } from "next/font/google";
 import "../styles/globals.css";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 const geist = Geist({
   variable: "--font-geist",
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
