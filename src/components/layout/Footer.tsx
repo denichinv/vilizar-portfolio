@@ -1,29 +1,32 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { Mail } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
+
+import { contact } from "@/data/contact";
 
 export default function Footer() {
   const iconLinkStyle =
     "text-[color:var(--text-muted)] transition-colors hover:text-[color:var(--accent)]";
+
   return (
     <footer className="border-t border-[color:var(--border)]">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-8 md:flex-row md:items-center md:justify-between md:px-8">
         <address className="not-italic">
           <p className="font-medium text-[color:var(--text-heading)]">
-            Vilizar Denichin
+            {contact.name}
           </p>
 
           <p className="mt-1 text-sm text-[color:var(--text-muted)]">
-            Front-End Developer
+            {contact.role}
           </p>
 
           <p className="mt-1 text-sm text-[color:var(--text-muted)]">
-            Dunstable, UK
+            {contact.location}
           </p>
         </address>
 
         <div className="flex items-center gap-5">
           <a
-            href="https://github.com/denichinv"
+            href={contact.github}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -33,7 +36,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="YOUR_LINKEDIN_URL"
+            href={contact.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -43,7 +46,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="mailto:YOUR_EMAIL"
+            href={`mailto:${contact.email}`}
             aria-label="Email"
             className={iconLinkStyle}
           >
