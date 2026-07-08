@@ -12,6 +12,13 @@ type ProjectPageProps = {
   }>;
 };
 
+export function generateStaticParams() {
+  return featuredProjects.map((project) => ({
+    slug: project.id,
+  }));
+}
+export const dynamicParams = false;
+
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
 
