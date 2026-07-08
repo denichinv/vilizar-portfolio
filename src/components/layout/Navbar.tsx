@@ -2,6 +2,7 @@
 
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { contact } from "@/data/contact";
 
 const navLinks = [
   { label: "Work", href: "#work" },
@@ -42,7 +43,7 @@ export default function Navbar() {
           ))}
 
           <a
-            href="https://calendly.com/vilizar"
+            href={contact.calendly}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-[var(--radius-sm)] border border-[color:var(--border)] px-3 py-2 text-[color:var(--text-heading)] transition hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]"
