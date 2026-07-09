@@ -51,7 +51,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="/cv.pdf"
+            href="/cv/vilizar-denichin-cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-11 items-center justify-center rounded-[var(--radius-sm)] border border-[color:var(--border)] px-6 text-sm font-medium text-[color:var(--text-heading)] transition-colors duration-200 hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]"
