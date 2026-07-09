@@ -18,10 +18,6 @@ export default function Footer() {
           <p className="mt-1 text-sm text-[color:var(--text-muted)]">
             {contact.role}
           </p>
-
-          <p className="mt-1 text-sm text-[color:var(--text-muted)]">
-            {contact.location}
-          </p>
         </address>
 
         <div className="flex items-center gap-5">
