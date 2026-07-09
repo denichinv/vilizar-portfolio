@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import type { FeaturedProject } from "@/data/Projects";
-import Badge from "./Badge";
+import Badge from "../ui/Badge";
 
 export default function ProjectHighlightCard({
   title,

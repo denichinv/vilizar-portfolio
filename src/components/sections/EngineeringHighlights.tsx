@@ -1,4 +1,4 @@
-import ProjectHighlightCard from "./ui/ProjectHighlightCard";
+import ProjectHighlightCard from "./ProjectHighlightCard";
 import { featuredProjects } from "@/data/Projects";
 import Section from "../layout/Section";
 

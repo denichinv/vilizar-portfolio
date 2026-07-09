@@ -4,7 +4,7 @@ import { featuredProjects } from "@/data/Projects";
 import Image from "next/image";
 import CaseStudySection from "@/components/sections/CaseStudySection";
 import { CheckCircle2 } from "lucide-react";
-import Badge from "@/components/sections/ui/Badge";
+import Badge from "@/components/ui/Badge";
 
 type ProjectPageProps = {
   params: Promise<{

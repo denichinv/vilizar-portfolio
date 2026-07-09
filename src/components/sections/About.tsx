@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 import Section from "@/components/layout/Section";
-import Badge from "@/components/sections/ui/Badge";
+import Badge from "@/components/ui/Badge";
 
 const skillGroups = [
   {
