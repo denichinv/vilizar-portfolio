@@ -5,13 +5,46 @@ import Image from "next/image";
 import CaseStudySection from "@/components/sections/CaseStudySection";
 import { CheckCircle2 } from "lucide-react";
 import Badge from "@/components/ui/Badge";
+import type { Metadata } from "next";
 
+type ProjectMetadataProps = {
+  params: Promise<{
+    slug: string;
+  }>;
+};
 type ProjectPageProps = {
   params: Promise<{
     slug: string;
   }>;
 };
+export async function generateMetadata({
+  params,
+}: ProjectMetadataProps): Promise<Metadata> {
+  const { slug } = await params;
 
+  const project = featuredProjects.find((project) => project.id === slug);
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+    };
+  }
+
+  return {
+    title: project.title,
+    description: project.description,
+    openGraph: {
+      title: `${project.title} | Vilizar Denichin`,
+      description: project.description,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | Vilizar Denichin`,
+      description: project.description,
+    },
+  };
+}
 export function generateStaticParams() {
   return featuredProjects.map((project) => ({
     slug: project.id,
