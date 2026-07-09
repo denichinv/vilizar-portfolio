@@ -21,9 +21,39 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Vilizar | Front-End Developer",
+  title: {
+    default: "Vilizar Denichin | Front-End Developer",
+    template: "%s | Vilizar Denichin",
+  },
   description:
-    "Front-End Developer specialising in React, TypeScript, and Next.js.",
+    "Front-End Developer based in Dunstable, UK, building responsive, accessible interfaces with React, TypeScript, Next.js and modern front-end tooling.",
+  applicationName: "Vilizar Portfolio",
+  authors: [{ name: "Vilizar Denichin" }],
+  creator: "Vilizar Denichin",
+  keywords: [
+    "Vilizar Denichin",
+    "Front-End Developer",
+    "React Developer",
+    "TypeScript Developer",
+    "Next.js Developer",
+    "Junior Front-End Developer",
+    "Dunstable",
+    "UK Front-End Developer",
+  ],
+  openGraph: {
+    title: "Vilizar Denichin | Front-End Developer",
+    description:
+      "Front-End Developer building responsive, accessible interfaces with React, TypeScript, Next.js and modern front-end tooling.",
+    type: "website",
+    locale: "en_GB",
+    siteName: "Vilizar Portfolio",
+  },
+  twitter: {
+    card: "summary",
+    title: "Vilizar Denichin | Front-End Developer",
+    description:
+      "Front-End Developer building responsive, accessible interfaces with React, TypeScript, Next.js and modern front-end tooling.",
+  },
 };
 
 export default function RootLayout({

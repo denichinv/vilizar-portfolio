@@ -5,9 +5,9 @@ import { useState } from "react";
 import { contact } from "@/data/contact";
 
 const navLinks = [
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/#work" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
