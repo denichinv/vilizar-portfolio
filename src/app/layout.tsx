@@ -21,6 +21,7 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vilizar.dev"),
   title: {
     default: "Vilizar Denichin | Front-End Developer",
     template: "%s | Vilizar Denichin",

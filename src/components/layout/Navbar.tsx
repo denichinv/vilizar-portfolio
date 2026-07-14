@@ -3,6 +3,7 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { contact } from "@/data/contact";
+import Link from "next/link";
 
 const navLinks = [
   { label: "Work", href: "/#work" },
@@ -23,13 +24,13 @@ export default function Navbar() {
         aria-label="Main navigation"
         className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 md:px-8"
       >
-        <a
+        <Link
           href="/"
           onClick={closeMenu}
           className="font-mono-custom text-sm font-semibold tracking-[-0.04em] text-[color:var(--text-heading)]"
         >
           V. Denichin
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-6 text-sm text-[color:var(--text-muted)] md:flex">
           {navLinks.map((link) => (
