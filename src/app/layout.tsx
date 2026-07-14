@@ -68,8 +68,17 @@ export default function RootLayout({
       className={`${geist.variable} ${jetbrainsMono.variable} ${dmSerif.variable}`}
     >
       <body>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-6 focus:top-6 focus:z-[100] focus:rounded-[var(--radius-sm)] focus:bg-[color:var(--accent)] focus:px-4 focus:py-3 focus:text-sm focus:font-medium focus:text-black"
+        >
+          Skip to content
+        </a>
+
         <Navbar />
-        {children}
+
+        <main id="main-content">{children}</main>
+
         <Footer />
       </body>
     </html>
