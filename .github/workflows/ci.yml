@@ -9,8 +9,8 @@ on:
       - main
 
 jobs:
-  lint-and-build:
-    name: Lint and build
+  lint-typecheck-build:
+    name: Lint, typecheck and build
     runs-on: ubuntu-latest
 
     steps:
@@ -28,6 +28,9 @@ jobs:
 
       - name: Run lint
         run: npm run lint
+
+      - name: Run typecheck
+        run: npm run typecheck
 
       - name: Build project
         run: npm run build
