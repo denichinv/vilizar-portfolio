@@ -35,7 +35,7 @@ export const featuredProjects: FeaturedProject[] = [
     badges: ["Client Project", "React 19", "Bilingual"],
     image: {
       src: "/images/projects/euphoria-wellness-banner.webp",
-      alt: "Placeholder project preview",
+      alt: "Euphoria Wellness website preview showing a modern wellness studio landing page.",
     },
     links: {
       live: "https://euphoria-wellness.com/",
@@ -78,7 +78,7 @@ export const featuredProjects: FeaturedProject[] = [
     badges: ["QuizAPI.io", "Playwright E2E", "TypeScript"],
     image: {
       src: "/images/projects/devquiz-banner.webp",
-      alt: "Placeholder project preview",
+      alt: "DevQuiz app preview showing a developer quiz interface with answer options.",
     },
     links: {
       live: "https://dev-quiz-v.netlify.app/",
@@ -122,7 +122,7 @@ export const featuredProjects: FeaturedProject[] = [
     badges: ["localStorage", "Custom Exercises", "22 Tests"],
     image: {
       src: "/images/projects/workout-builder-banner.webp",
-      alt: "Placeholder project preview",
+      alt: "Workout Builder app preview showing a weekly workout planning interface.",
     },
     links: {
       live: "https://workoutroutinebuilder.netlify.app/",
@@ -165,7 +165,7 @@ export const featuredProjects: FeaturedProject[] = [
     badges: ["TMDB API", "Filtering", "GitHub Actions"],
     image: {
       src: "/images/projects/cinevault-banner.webp",
-      alt: "Placeholder project preview",
+      alt: "CineVault app preview showing a movie discovery interface with movie cards.",
     },
     links: {
       live: "https://cinevaultmoviesapp.netlify.app/",

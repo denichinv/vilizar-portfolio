@@ -3,7 +3,31 @@ import { DM_Serif_Display, Geist, JetBrains_Mono } from "next/font/google";
 import "../styles/globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { contact } from "@/data/contact";
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: contact.name,
+  url: "https://vilizar.dev",
+  jobTitle: contact.role,
+  email: contact.email,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Dunstable",
+    addressCountry: "GB",
+  },
+  sameAs: [contact.github, contact.linkedin],
+  knowsAbout: [
+    "React",
+    "TypeScript",
+    "Next.js",
+    "Front-End Development",
+    "Responsive Web Design",
+    "Web Accessibility",
+    "Automated Testing",
+  ],
+};
 const geist = Geist({
   variable: "--font-geist",
   subsets: ["latin"],
@@ -21,6 +45,7 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vilizar.dev"),
   title: {
     default: "Vilizar Denichin | Front-End Developer",
     template: "%s | Vilizar Denichin",
@@ -67,8 +92,23 @@ export default function RootLayout({
       className={`${geist.variable} ${jetbrainsMono.variable} ${dmSerif.variable}`}
     >
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personJsonLd),
+          }}
+        />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-6 focus:top-6 focus:z-[100] focus:rounded-[var(--radius-sm)] focus:bg-[color:var(--accent)] focus:px-4 focus:py-3 focus:text-sm focus:font-medium focus:text-black"
+        >
+          Skip to content
+        </a>
+
         <Navbar />
-        {children}
+
+        <main id="main-content">{children}</main>
+
         <Footer />
       </body>
     </html>

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Section from "@/components/layout/Section";
-import { featuredProjects } from "@/data/Projects";
+import { featuredProjects } from "@/data/projects";
 import Image from "next/image";
 import CaseStudySection from "@/components/sections/CaseStudySection";
 import { CheckCircle2 } from "lucide-react";
