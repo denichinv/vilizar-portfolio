@@ -2,21 +2,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import type { FeaturedProject } from "@/data/projects";
-import Badge from "../ui/Badge";
+import Badge from "@/components/ui/Badge";
 
-export default function ProjectHighlightCard({
+type ProjectHighlightCardProps = FeaturedProject & {
+  priority?: boolean;
+};
+
+export default function ProjectCard({
   title,
   description,
-
   value,
   label,
-
   badges,
-
   image: { src, alt },
-
   links: { live, source, caseStudy },
-}: FeaturedProject) {
+  priority = false,
+}: ProjectHighlightCardProps) {
   const linkStyle =
     "text-[color:var(--text-heading)] transition hover:text-[color:var(--accent)]";
 
@@ -30,6 +31,7 @@ export default function ProjectHighlightCard({
         alt={alt}
         width={1280}
         height={720}
+        priority={priority}
         className="aspect-video w-full object-cover transition duration-300 group-hover:scale-[1.02]"
       />
 

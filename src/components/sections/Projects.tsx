@@ -1,8 +1,8 @@
-import ProjectHighlightCard from "./ProjectHighlightCard";
+import ProjectCard from "./ProjectCard";
 import { featuredProjects } from "@/data/projects";
 import Section from "../layout/Section";
 
-export default function EngineeringHighlights() {
+export default function Projects() {
   return (
     <Section id="work" className="py-24 md:py-32">
       <h2 className="text-4xl md:text-5xl">Selected Work</h2>
@@ -13,8 +13,8 @@ export default function EngineeringHighlights() {
       </p>
 
       <div className="mt-12 grid gap-8 md:grid-cols-2">
-        {featuredProjects.map((project) => (
-          <ProjectHighlightCard key={project.id} {...project} />
+        {featuredProjects.map((project, index) => (
+          <ProjectCard key={project.id} {...project} priority={index < 2} />
         ))}
       </div>
     </Section>
