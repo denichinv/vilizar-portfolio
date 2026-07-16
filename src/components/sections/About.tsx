@@ -1,5 +1,7 @@
-// src/components/sections/About.tsx
+"use client";
 
+import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import Image from "next/image";
 
 import Section from "@/components/layout/Section";
@@ -28,25 +30,71 @@ const skillGroups = [
 
 const interests = ["⚽ Football", "🏋️ Gym", "🥾 Hiking", "✈️ Travel"];
 
+const containerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.14,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 24,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const skillsVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
 export default function About() {
   return (
     <Section id="about" className="py-24 md:py-32">
-      <div className="mx-auto max-w-3xl text-center">
-        <Image
-          src="/images/about/about-pic-dark.webp"
-          alt="Portrait of Vilizar Denichin"
-          width={220}
-          height={220}
-          className="mx-auto rounded-full border border-[color:var(--border)] object-cover shadow-[var(--shadow-card)]"
-        />
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        className="mx-auto max-w-3xl text-center"
+      >
+        <motion.div variants={itemVariants}>
+          <Image
+            src="/images/about/about-pic-dark.webp"
+            alt="Portrait of Vilizar Denichin"
+            width={220}
+            height={220}
+            className="mx-auto rounded-full border border-[color:var(--border)] object-cover shadow-[var(--shadow-card)]"
+          />
+        </motion.div>
 
-        <p className="mt-8 font-mono-custom text-sm uppercase tracking-[0.25em] text-[color:var(--accent)]">
-          About
-        </p>
+        <motion.div variants={itemVariants}>
+          <p className="mt-8 font-mono-custom text-sm uppercase tracking-[0.25em] text-[color:var(--accent)]">
+            About
+          </p>
 
-        <h2 className="mt-4 text-4xl md:text-5xl">Hi, I&apos;m Vilizar 👋</h2>
+          <h2 className="mt-4 text-4xl md:text-5xl">Hi, I&apos;m Vilizar 👋</h2>
+        </motion.div>
 
-        <div className="mt-8 space-y-6 text-left text-lg leading-8 text-[color:var(--text-muted)]">
+        <motion.div
+          variants={itemVariants}
+          className="mt-8 space-y-6 text-left text-lg leading-8 text-[color:var(--text-muted)]"
+        >
           <p>
             I&apos;m a self-taught Front-End Developer originally from{" "}
             <span className="font-medium text-[color:var(--text-heading)]">
@@ -77,17 +125,21 @@ export default function About() {
             works, improving the way I think about software, and continuing to
             grow toward my first role as part of a real development team.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mt-12">
+        <motion.div variants={itemVariants} className="mt-12">
           <p className="text-sm font-medium text-[color:var(--text-heading)]">
             Tools and technologies I work with
           </p>
 
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
+          <motion.div
+            variants={skillsVariants}
+            className="mt-5 grid gap-4 md:grid-cols-3"
+          >
             {skillGroups.map((group) => (
-              <div
+              <motion.div
                 key={group.title}
+                variants={itemVariants}
                 className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4 text-left shadow-[var(--shadow-card)]"
               >
                 <p className="text-sm font-medium text-[color:var(--text-heading)]">
@@ -99,12 +151,12 @@ export default function About() {
                     <Badge key={skill}>{skill}</Badge>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="mt-8">
+        <motion.div variants={itemVariants} className="mt-8">
           <p className="text-sm font-medium text-[color:var(--text-heading)]">
             Outside of development
           </p>
@@ -114,8 +166,8 @@ export default function About() {
               <Badge key={interest}>{interest}</Badge>
             ))}
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </Section>
   );
 }
