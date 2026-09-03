@@ -20,6 +20,12 @@ export type FeaturedProject = {
     challenge: string;
     architecture: string;
     testing: string;
+    audit?: {
+      source: string;
+      date: string;
+      reportUrl: string;
+      metrics: { value: string; label: string }[];
+    };
     features: string[];
     techStack: string[];
   };
@@ -58,6 +64,16 @@ export const featuredProjects: FeaturedProject[] = [
         "The website is a single-page React 19 and TypeScript application organised into reusable section and UI components. Typed translation dictionaries and a shared language provider manage the Bulgarian and English content. Responsive picture sources provide different image sizes for mobile and desktop screens, while gallery videos use poster images, deferred loading and viewport-based playback. Form submissions are handled through Netlify Forms without a custom backend.",
       testing:
         "The project has 28 automated tests across eight test files using Vitest and React Testing Library. They cover component rendering, semantic headings, language selection and persistence, responsive media attributes, viewport-controlled video behaviour, reduced-motion preferences, and contact-form submission states. GitHub Actions runs linting, all tests and a production build for pull requests and changes to the main branch.",
+      audit: {
+        source: "Semrush Site Audit",
+        date: "3 September 2026",
+        reportUrl: "/reports/euphoria-semrush-site-audit-2026-09-03.pdf",
+        metrics: [
+          { value: "95%", label: "Site Health" },
+          { value: "99%", label: "AI Search Health" },
+          { value: "0", label: "Errors" },
+        ],
+      },
       features: [
         "Bulgarian-first interface with English language switching",
         "Pilates Reformer and XBODY EMS service presentation",
