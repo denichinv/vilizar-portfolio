@@ -106,7 +106,7 @@ export const featuredProjects: FeaturedProject[] = [
     id: "devquiz",
     title: "DevQuiz",
     description:
-      "A developer quiz application with configurable quizzes, a server-side QuizAPI proxy, approximately 90% test coverage and Playwright-tested user journeys.",
+      "A developer quiz application with configurable quizzes, a secure server-side QuizAPI proxy, resilient error handling, approximately 90% test coverage and Playwright-tested user journeys.",
     value: "~90%",
     label: "Test Coverage",
     badges: [

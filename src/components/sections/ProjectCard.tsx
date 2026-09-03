@@ -25,7 +25,7 @@ export default function ProjectCard({
     "rounded-[var(--radius-sm)] bg-[color:var(--accent)] px-10 py-2 text-sm font-medium text-black transition hover:opacity-90";
 
   return (
-    <article className="group overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--surface)] shadow-[var(--shadow-card)] transition duration-200 hover:border-[color:var(--accent)] hover:shadow-[var(--shadow-glow)]">
+    <article className="group flex h-full flex-col overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--surface)] shadow-[var(--shadow-card)] transition duration-200 hover:border-[color:var(--accent)] hover:shadow-[var(--shadow-glow)]">
       <Image
         src={src}
         alt={alt}
@@ -35,7 +35,7 @@ export default function ProjectCard({
         className="aspect-video w-full object-cover transition duration-300 group-hover:scale-[1.02]"
       />
 
-      <div className="p-6">
+      <div className="flex flex-1 flex-col p-6">
         <header className="flex items-start justify-between gap-4">
           <h3 className="text-xl font-semibold text-[color:var(--text-heading)]">
             {title}
@@ -60,7 +60,7 @@ export default function ProjectCard({
           ))}
         </ul>
 
-        <footer className="mt-6 flex flex-wrap items-center  gap-4 text-sm font-medium ">
+        <footer className="mt-auto flex flex-wrap items-center gap-4 pt-6 text-sm font-medium">
           <a
             href={live}
             target="_blank"

@@ -72,7 +72,7 @@ export default function Projects() {
         className="mt-12 grid gap-8 md:grid-cols-2"
       >
         {featuredProjects.map((project, index) => (
-          <motion.div key={project.id} variants={cardVariants}>
+          <motion.div key={project.id} variants={cardVariants} className="h-full">
             <ProjectCard {...project} priority={index < 2} />
           </motion.div>
         ))}
