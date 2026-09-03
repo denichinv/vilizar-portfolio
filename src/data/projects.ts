@@ -106,13 +106,18 @@ export const featuredProjects: FeaturedProject[] = [
     id: "devquiz",
     title: "DevQuiz",
     description:
-      "A fully tested quiz application built with QuizAPI.io, TypeScript and modern React patterns.",
+      "A developer quiz application with configurable quizzes, a server-side QuizAPI proxy, approximately 90% test coverage and Playwright-tested user journeys.",
     value: "~90%",
     label: "Test Coverage",
-    badges: ["QuizAPI.io", "Playwright E2E", "TypeScript"],
+    badges: [
+      "React 19",
+      "Secure API Proxy",
+      "49 Vitest Tests",
+      "Playwright E2E",
+    ],
     image: {
       src: "/images/projects/devquiz-banner.webp",
-      alt: "DevQuiz app preview showing a developer quiz interface with answer options.",
+      alt: "DevQuiz interface showing a developer question with multiple-choice answers and the current score.",
     },
     links: {
       live: "https://dev-quiz-v.netlify.app/",
@@ -121,28 +126,45 @@ export const featuredProjects: FeaturedProject[] = [
     },
     caseStudy: {
       overview:
-        "DevQuiz is a quiz application built to strengthen my TypeScript, API integration and automated testing skills. It focuses on clean React patterns, reliable user interactions and a well-tested codebase.",
+        "DevQuiz is a React 19 and TypeScript application for testing knowledge across developer-focused topics. Users can choose a category, difficulty and quiz length before answering questions supplied by QuizAPI.io. The project combines a focused quiz experience with secure API handling and extensive automated testing.",
+
       challenge:
-        "Creating a reliable quiz experience while maintaining high test coverage and a responsive user interface.",
+        "The main challenge was making a third-party quiz API safe and dependable in a browser-based application. The QuizAPI key could not be exposed to users, and the interface needed to handle failed requests, empty question sets and inconsistent answer options while keeping scoring and navigation predictable.",
+
       architecture:
-        "The application follows a component-based React architecture with reusable UI components, clear state management and strict TypeScript typing to keep the codebase maintainable.",
+        "The React application separates quiz setup, loading, question and completion states into focused components. Browser requests are sent to a Netlify Function, which reads the QuizAPI key from the server environment, requests questions from QuizAPI.io and normalises the response before returning it to the frontend. The client filters unavailable answers, identifies the correct option, shuffles the choices and stores the active quiz state in React.",
+
       testing:
-        "The project includes unit, integration and end-to-end tests using Vitest, React Testing Library and Playwright to ensure a reliable user experience.",
+        "The project has 49 passing Vitest and React Testing Library tests across seven files, covering components, quiz state, API response handling and answer shuffling. The current coverage report shows 89.47% statement coverage and 89.88% line coverage, with all UI components at 100%. Four Playwright tests cover the main browser journeys, including loading the application, starting and completing a quiz, displaying answer feedback and showing the final score. Separate GitHub Actions workflows run the Vitest and Playwright suites on pull requests and changes to the main branch.",
+
       features: [
-        "Fetches quiz questions from QuizAPI.io",
-        "Category and difficulty selection",
-        "Instant score calculation",
-        "Responsive interface",
-        "Comprehensive automated testing",
+        "Seventeen developer-focused quiz categories",
+        "Easy, medium and hard difficulty selection",
+        "Configurable quizzes with 5, 10, 15 or 20 questions",
+        "Server-side QuizAPI proxy using Netlify Functions",
+        "API key protected through server environment variables",
+        "Normalised and shuffled answer options",
+        "Immediate correct and incorrect answer feedback",
+        "Live score tracking and final results",
+        "Empty-response and request-failure handling",
+        "Restartable quiz journey",
+        "49 Vitest and React Testing Library tests",
+        "Four Playwright end-to-end tests",
+        "Automated test workflows with GitHub Actions",
+        "Modular Sass architecture",
       ],
+
       techStack: [
-        "React",
+        "React 19",
         "TypeScript",
         "Vite",
+        "Sass",
         "QuizAPI.io",
+        "Netlify Functions",
         "Vitest",
         "React Testing Library",
         "Playwright",
+        "GitHub Actions",
       ],
     },
   },
