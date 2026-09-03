@@ -132,7 +132,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           rel="noopener noreferrer"
           className="rounded-[var(--radius-sm)] bg-[color:var(--accent)] px-6 py-3 font-medium text-black transition hover:opacity-90"
         >
-          Live Demo ↗
+          {project.links.liveLabel ?? "Live Demo"} ↗
         </a>
 
         <a
