@@ -3,6 +3,7 @@ import Section from "@/components/layout/Section";
 import { featuredProjects } from "@/data/projects";
 import Image from "next/image";
 import CaseStudySection from "@/components/sections/CaseStudySection";
+import AuditResults from "@/components/sections/AuditResults";
 import { CheckCircle2 } from "lucide-react";
 import Badge from "@/components/ui/Badge";
 import type { Metadata } from "next";
@@ -98,6 +99,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <CaseStudySection title="Testing">
         {project.caseStudy.testing}
       </CaseStudySection>
+      {project.caseStudy.audit ? (
+        <CaseStudySection title="Verified audit results">
+          <AuditResults {...project.caseStudy.audit} />
+        </CaseStudySection>
+      ) : null}
       <CaseStudySection title="Features">
         <ul className="space-y-2">
           {project.caseStudy.features.map((feature) => (
@@ -126,7 +132,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           rel="noopener noreferrer"
           className="rounded-[var(--radius-sm)] bg-[color:var(--accent)] px-6 py-3 font-medium text-black transition hover:opacity-90"
         >
-          Live Demo ↗
+          {project.links.liveLabel ?? "Live Demo"} ↗
         </a>
 
         <a
