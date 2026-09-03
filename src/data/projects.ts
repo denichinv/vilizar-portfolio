@@ -11,6 +11,7 @@ export type FeaturedProject = {
   };
   links: {
     live: string;
+    liveLabel?: string;
     source: string;
     caseStudy: string;
   };
@@ -27,18 +28,24 @@ export type FeaturedProject = {
 export const featuredProjects: FeaturedProject[] = [
   {
     id: "euphoria-wellness",
-    title: "Euphoria Wellness",
+    title: "Euphoria Wellness Studio",
     description:
-      "A live client-facing wellness studio website built with React, TypeScript and responsive UI.",
+      "A production bilingual website for a wellness studio in Blagoevgrad, designed to introduce Pilates Reformer and XBODY EMS services and convert visitors into booking enquiries.",
     value: "LIVE",
-    label: "Client Site",
-    badges: ["Client Project", "React 19", "Bilingual"],
+    label: "Client Website",
+    badges: [
+      "Client Project",
+      "React 19",
+      "Bulgarian & English",
+      "Technical SEO",
+    ],
     image: {
       src: "/images/projects/euphoria-wellness-banner.webp",
       alt: "Euphoria Wellness website preview showing a modern wellness studio landing page.",
     },
     links: {
       live: "https://euphoria-wellness.com/",
+      liveLabel: "Visit Live Site",
       source: "https://github.com/denichinv/euphoria-wellness-studio-bg",
       caseStudy: "euphoria-wellness",
     },

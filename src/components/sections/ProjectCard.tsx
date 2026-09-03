@@ -15,7 +15,7 @@ export default function ProjectCard({
   label,
   badges,
   image: { src, alt },
-  links: { live, source, caseStudy },
+  links: { live, liveLabel = "Live Demo", source, caseStudy },
   priority = false,
 }: ProjectHighlightCardProps) {
   const linkStyle =
@@ -67,7 +67,7 @@ export default function ProjectCard({
             rel="noopener noreferrer"
             className={primaryLinkStyle}
           >
-            Live Demo ↗
+            {liveLabel} ↗
           </a>
 
           <a
