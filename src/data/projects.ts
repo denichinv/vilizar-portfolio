@@ -172,13 +172,13 @@ export const featuredProjects: FeaturedProject[] = [
     id: "workout-builder",
     title: "Workout Builder",
     description:
-      "A 7-day workout planning app with custom exercises, persistent state and automated tests.",
+      "A seven-day workout planner with a searchable exercise library, custom exercises, editable sets and reps, browser persistence and approximately 90% test coverage.",
     value: "7-Day",
     label: "Workout Planner",
-    badges: ["localStorage", "Custom Exercises", "22 Tests"],
+    badges: ["React 19", "localStorage", "22 Jest Tests", "~90% Coverage"],
     image: {
       src: "/images/projects/workout-builder-banner.webp",
-      alt: "Workout Builder app preview showing a weekly workout planning interface.",
+      alt: "Workout Builder interface showing an exercise library and a seven-day weekly workout plan.",
     },
     links: {
       live: "https://workoutroutinebuilder.netlify.app/",
@@ -187,27 +187,45 @@ export const featuredProjects: FeaturedProject[] = [
     },
     caseStudy: {
       overview:
-        "Workout Builder is a workout planning application that helps users create and manage weekly exercise routines. The project focuses on state management, persistent storage with localStorage and an intuitive user experience.",
+        "Workout Builder is a React 19 application for creating a complete weekly exercise routine in the browser. Users can search the built-in exercise library, create their own exercises, assign them to any day of the week and customise the number of sets and repetitions. Both the exercise library and weekly plan persist between sessions without requiring an account.",
+
       challenge:
-        "Managing workout state while persisting user data across sessions using localStorage.",
+        "The main challenge was keeping seven independent daily plans, a customisable exercise library and editable workout values synchronised through one interface. Updates needed to affect only the selected day or exercise while remaining predictable, responsive and persistent after the browser was closed.",
+
       architecture:
-        "The application separates reusable UI components from state management logic, making it easier to extend new exercises and weekly plans without increasing complexity.",
+        "The application uses React state to manage the exercise library and a weekly object containing an exercise array for each day. Functional state updates create new arrays and objects when exercises are assigned, edited or removed. Lazy state initialisers restore the saved library and weekly plan from localStorage, while separate effects save both collections whenever they change. The interface is divided into focused ExerciseList and Planner components.",
+
       testing:
-        "Core application behaviour is covered with automated tests to verify state updates, persistent storage and user interactions.",
+        "The project has 22 passing Jest and React Testing Library tests across four test suites. They cover the default exercise data, component rendering, empty states, search and category filtering, custom exercise creation and deletion, day assignment, exercise removal, sets and reps updates, weekly exercise counts and localStorage persistence. The current report shows 89.85% statement coverage and 93.65% line coverage, with 100% statement coverage across the Planner and ExerciseList components. GitHub Actions runs the complete Jest coverage suite for pushes and pull requests.",
+
       features: [
-        "Create weekly workout routines",
-        "Add custom exercises",
-        "Persistent localStorage data",
-        "Simple drag-free workflow",
-        "Responsive design",
+        "Seven-day workout planning",
+        "Searchable built-in exercise library",
+        "First-letter exercise filtering",
+        "Custom exercise creation and deletion",
+        "Exercise assignment to individual days",
+        "Editable sets and repetitions",
+        "Automatic weekly exercise count",
+        "Empty-state guidance for every day",
+        "Weekly plan persistence with localStorage",
+        "Custom exercise persistence with localStorage",
+        "Responsive one, three and seven-column planner layouts",
+        "22 Jest and React Testing Library tests",
+        "Approximately 90% statement coverage",
+        "Automated test coverage checks with GitHub Actions",
       ],
+
       techStack: [
-        "React",
-        "TypeScript",
+        "React 19",
+        "JavaScript",
         "Vite",
+        "Tailwind CSS 4",
         "localStorage",
-        "Vitest",
+        "Jest",
         "React Testing Library",
+        "Testing Library User Event",
+        "GitHub Actions",
+        "Netlify",
       ],
     },
   },
