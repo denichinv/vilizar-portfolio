@@ -1,0 +1,28 @@
+# Vilizar Denichin
+
+> Portfolio of Vilizar Denichin, a Front-End Developer based in Dunstable, UK, specialising in React, TypeScript, Next.js, accessibility, responsive interfaces and automated testing.
+
+## Portfolio
+
+- [Homepage](https://vilizar.dev/): Overview of Vilizar Denichin's front-end development work, skills and contact details.
+- [About](https://vilizar.dev/#about): Background, development strengths and working approach.
+- [Selected Work](https://vilizar.dev/#work): Featured client and personal projects.
+- [Contact](https://vilizar.dev/#contact): Contact and professional links.
+- [Curriculum Vitae](https://vilizar.dev/cv/vilizar-denichin-cv.pdf): Downloadable CV.
+
+## Project Case Studies
+
+- [Euphoria Wellness Studio](https://vilizar.dev/projects/euphoria-wellness): Production bilingual wellness studio website with responsive media, booking enquiry form, technical SEO and automated tests.
+- [DevQuiz](https://vilizar.dev/projects/devquiz): Developer quiz application with a secure server-side API proxy, resilient error handling and Vitest and Playwright tests.
+- [Workout Builder](https://vilizar.dev/projects/workout-builder): Seven-day workout planner with custom exercises, persistent browser state and automated tests.
+- [CineVault](https://vilizar.dev/projects/cinevault): TMDB-powered movie discovery application with filtering, sorting and automated tests.
+
+## Site Information
+
+- [Sitemap](https://vilizar.dev/sitemap.xml): Canonical public URLs for the site.
+- [Robots.txt](https://vilizar.dev/robots.txt): Crawler access rules and sitemap location.
+
+## Author
+
+- [GitHub](https://github.com/denichinv): Source code and public projects.
+- [LinkedIn](https://www.linkedin.com/in/vilizar-denichin/): Professional profile.
