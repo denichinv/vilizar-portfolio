@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import Section from "@/components/layout/Section";
 import { featuredProjects } from "@/data/projects";
 import Image from "next/image";
@@ -61,6 +62,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   if (!project) {
     notFound();
   }
+
+  const relatedProjects = featuredProjects.filter(
+    (relatedProject) => relatedProject.id !== project.id,
+  );
 
   return (
     <Section className="pt-32">
@@ -144,6 +149,27 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           View Source
         </a>
       </div>
+
+      <nav
+        aria-label="Other project case studies"
+        className="mt-16 border-t border-[color:var(--border)] pt-8"
+      >
+        <h2 className="text-2xl text-[color:var(--text-heading)]">
+          Explore other case studies
+        </h2>
+        <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-3">
+          {relatedProjects.map((relatedProject) => (
+            <li key={relatedProject.id}>
+              <Link
+                href={`/projects/${relatedProject.id}`}
+                className="text-[color:var(--text-heading)] transition hover:text-[color:var(--accent)]"
+              >
+                {relatedProject.title} →
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </Section>
   );
 }
