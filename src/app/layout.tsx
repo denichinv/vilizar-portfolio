@@ -52,6 +52,9 @@ export const metadata: Metadata = {
   },
   description:
     "Front-End Developer based in Dunstable, UK, building responsive, accessible interfaces with React, TypeScript, Next.js and modern front-end tooling.",
+  alternates: {
+    canonical: "/",
+  },
   applicationName: "Vilizar Portfolio",
   authors: [{ name: "Vilizar Denichin" }],
   creator: "Vilizar Denichin",
@@ -66,6 +69,7 @@ export const metadata: Metadata = {
     "UK Front-End Developer",
   ],
   openGraph: {
+    url: "/",
     title: "Vilizar Denichin | Front-End Developer",
     description:
       "Front-End Developer building responsive, accessible interfaces with React, TypeScript, Next.js and modern front-end tooling.",
