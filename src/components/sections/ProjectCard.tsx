@@ -32,6 +32,7 @@ export default function ProjectCard({
         width={1280}
         height={720}
         priority={priority}
+        sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc((100vw - 5rem) / 2), 576px"
         className="aspect-video w-full object-cover transition duration-300 group-hover:scale-[1.02]"
       />
 
