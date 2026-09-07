@@ -1,11 +1,35 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useSyncExternalStore } from "react";
 
 import Section from "@/components/layout/Section";
 import { fadeInUp, staggerContainer } from "@/lib/motion";
 
+const desktopMediaQuery = "(min-width: 768px)";
+
+function subscribeToDesktopLayout(onChange: () => void) {
+  const mediaQuery = window.matchMedia(desktopMediaQuery);
+  mediaQuery.addEventListener("change", onChange);
+
+  return () => mediaQuery.removeEventListener("change", onChange);
+}
+
+function getDesktopLayoutSnapshot() {
+  return window.matchMedia(desktopMediaQuery).matches;
+}
+
+function getServerLayoutSnapshot() {
+  return false;
+}
+
 export default function Hero() {
+  const isDesktop = useSyncExternalStore(
+    subscribeToDesktopLayout,
+    getDesktopLayoutSnapshot,
+    getServerLayoutSnapshot,
+  );
+
   return (
     <Section className="relative z-0 min-h-[calc(100svh-4.5rem)] overflow-hidden">
       <div className="hero-background absolute inset-0 z-0" />
@@ -25,9 +49,14 @@ export default function Hero() {
             Front-End Developer
           </motion.p>
 
-          <h1 className="max-w-4xl text-5xl tracking-[-0.04em] text-[color:var(--text-heading)] sm:text-6xl md:text-7xl lg:text-8xl">
+          <motion.h1
+            variants={fadeInUp}
+            initial={isDesktop ? "hidden" : false}
+            animate={isDesktop ? "visible" : false}
+            className="max-w-4xl text-5xl tracking-[-0.04em] text-[color:var(--text-heading)] sm:text-6xl md:text-7xl lg:text-8xl"
+          >
             Building interfaces that work.
-          </h1>
+          </motion.h1>
 
           <motion.p
             variants={fadeInUp}
