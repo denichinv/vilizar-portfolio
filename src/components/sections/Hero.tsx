@@ -25,12 +25,9 @@ export default function Hero() {
             Front-End Developer
           </motion.p>
 
-          <motion.h1
-            variants={fadeInUp}
-            className="max-w-4xl text-5xl tracking-[-0.04em] text-[color:var(--text-heading)] sm:text-6xl md:text-7xl lg:text-8xl"
-          >
+          <h1 className="max-w-4xl text-5xl tracking-[-0.04em] text-[color:var(--text-heading)] sm:text-6xl md:text-7xl lg:text-8xl">
             Building interfaces that work.
-          </motion.h1>
+          </h1>
 
           <motion.p
             variants={fadeInUp}
