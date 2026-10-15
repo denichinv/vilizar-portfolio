@@ -5,7 +5,7 @@ import { featuredProjects } from "@/data/projects";
 import Image from "next/image";
 import CaseStudySection from "@/components/sections/CaseStudySection";
 import AuditResults from "@/components/sections/AuditResults";
-import { CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import Badge from "@/components/ui/Badge";
 import type { Metadata } from "next";
 
@@ -139,9 +139,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           href={project.links.live}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-[var(--radius-sm)] bg-[color:var(--accent)] px-6 py-3 font-medium text-black transition hover:opacity-90"
+          className="inline-flex items-center justify-center gap-1.5 rounded-[var(--radius-sm)] bg-[color:var(--accent)] px-6 py-3 font-medium text-black transition hover:opacity-90"
         >
-          {project.links.liveLabel ?? "Live Demo"} ↗
+          {project.links.liveLabel ?? "Live Demo"}
+          <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
         </a>
 
         <a
