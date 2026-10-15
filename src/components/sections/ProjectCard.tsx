@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import type { FeaturedProject } from "@/data/projects";
 import Badge from "@/components/ui/Badge";
@@ -22,7 +23,7 @@ export default function ProjectCard({
     "text-[color:var(--text-heading)] transition hover:text-[color:var(--accent)]";
 
   const primaryLinkStyle =
-    "rounded-[var(--radius-sm)] bg-[color:var(--accent)] px-10 py-2 text-sm font-medium text-black transition hover:opacity-90";
+    "inline-flex items-center justify-center gap-1.5 rounded-[var(--radius-sm)] bg-[color:var(--accent)] px-10 py-2 text-sm font-medium text-black transition hover:opacity-90";
 
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--surface)] shadow-[var(--shadow-card)] transition duration-200 hover:border-[color:var(--accent)] hover:shadow-[var(--shadow-glow)]">
@@ -70,7 +71,8 @@ export default function ProjectCard({
             rel="noopener noreferrer"
             className={primaryLinkStyle}
           >
-            {liveLabel} ↗
+            {liveLabel}
+            <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
           </a>
 
           <a

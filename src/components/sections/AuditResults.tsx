@@ -1,3 +1,5 @@
+import { ArrowUpRight } from "lucide-react";
+
 type AuditResultsProps = {
   source: string;
   date: string;
@@ -40,9 +42,10 @@ export default function AuditResults({
           href={reportUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-fit text-sm font-medium text-[color:var(--text-heading)] transition hover:text-[color:var(--accent)]"
+          className="inline-flex w-fit items-center gap-1.5 text-sm font-medium text-[color:var(--text-heading)] transition hover:text-[color:var(--accent)]"
         >
-          View audit report <span aria-hidden="true">↗</span>
+          View audit report
+          <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
           <span className="sr-only"> (opens in a new tab)</span>
         </a>
       </div>
