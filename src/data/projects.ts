@@ -36,7 +36,7 @@ export const featuredProjects: FeaturedProject[] = [
     id: "euphoria-wellness",
     title: "Euphoria Wellness Studio",
     description:
-      "A production bilingual website for a wellness studio in Blagoevgrad, presenting Pilates Reformer and XBODY EMS services with responsive media, a booking enquiry form and technical SEO.",
+      "A production bilingual website for a wellness studio in Blagoevgrad, presenting Pilates Reformer and XBODY EMS services with responsive media, a service-specific booking enquiry form and technical SEO.",
     value: "LIVE",
     label: "Client Website",
     badges: [
@@ -47,7 +47,7 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     image: {
       src: "/images/projects/euphoria-wellness-banner.webp",
-      alt: "Euphoria Wellness Studio homepage presenting XBODY EMS and Pilates Reformer services.",
+      alt: "Euphoria Wellness Studio desktop and mobile mockups presenting Pilates Reformer and XBody EMS services.",
     },
     links: {
       live: "https://euphoria-wellness.com/",
@@ -81,7 +81,8 @@ export const featuredProjects: FeaturedProject[] = [
         "Deferred gallery videos with poster images",
         "Viewport-based video playback",
         "Reduced-motion handling for animated media",
-        "Booking enquiry form powered by Netlify Forms",
+        "Booking enquiry form with required service selection, powered by Netlify Forms",
+        "Refined responsive footer with service-specific contact details",
         "Canonical and social-sharing metadata",
         "LocalBusiness structured data",
         "Sitemap and robots.txt configuration",
@@ -106,18 +107,18 @@ export const featuredProjects: FeaturedProject[] = [
     id: "devquiz",
     title: "DevQuiz",
     description:
-      "A developer quiz application with configurable quizzes, a secure server-side QuizAPI proxy, resilient error handling, approximately 90% test coverage and Playwright-tested user journeys.",
-    value: "~90%",
-    label: "Test Coverage",
+      "A developer practice workspace with configurable quizzes, answer review, missed-question retries and a validated server-side QuizAPI proxy with timeout recovery.",
+    value: "Review",
+    label: "Practice & Retry",
     badges: [
       "React 19",
       "Secure API Proxy",
-      "49 Vitest Tests",
+      "Answer Review",
       "Playwright E2E",
     ],
     image: {
       src: "/images/projects/devquiz-banner.webp",
-      alt: "DevQuiz interface showing a developer question with multiple-choice answers and the current score.",
+      alt: "DevQuiz desktop setup and mobile quiz mockups showing answer feedback and progress.",
     },
     links: {
       live: "https://dev-quiz-v.netlify.app/",
@@ -126,16 +127,16 @@ export const featuredProjects: FeaturedProject[] = [
     },
     caseStudy: {
       overview:
-        "DevQuiz is a React 19 and TypeScript application for testing knowledge across developer-focused topics. Users can choose a category, difficulty and quiz length before answering questions supplied by QuizAPI.io. The project combines a focused quiz experience with secure API handling and extensive automated testing.",
+        "DevQuiz is a React 19 and TypeScript application for testing knowledge across developer-focused topics. Users can choose a category, difficulty and quiz length before answering questions supplied by QuizAPI.io. The redesigned practice workspace adds progress tracking, accessible answer feedback, a full answer review and retries using only the questions missed in the latest round.",
 
       challenge:
         "The main challenge was making a third-party quiz API safe and dependable in a browser-based application. The QuizAPI key could not be exposed to users, and the interface needed to handle failed requests, empty question sets and inconsistent answer options while keeping scoring and navigation predictable.",
 
       architecture:
-        "The React application separates quiz setup, loading, question and completion states into focused components. Browser requests are sent to a Netlify Function, which reads the QuizAPI key from the server environment, requests questions from QuizAPI.io and normalises the response before returning it to the frontend. The client filters unavailable answers, identifies the correct option, shuffles the choices and stores the active quiz state in React.",
+        "The React application separates quiz setup, loading, question and completion states into focused components. Browser requests are sent to a Netlify Function, which reads the QuizAPI key from the server environment, requests questions from QuizAPI.io and normalises the response before returning it to the frontend. The proxy validates category, difficulty and question count against shared options, checks upstream responses and aborts requests after 10 seconds. The client applies a separate 15-second deadline, cancels obsolete requests and accepts only unambiguous single-answer questions. React state retains the active round and answer history, allowing missed-question retries without another API request.",
 
       testing:
-        "The project has 49 passing Vitest and React Testing Library tests across seven files, covering components, quiz state, API response handling and answer shuffling. The current coverage report shows 89.47% statement coverage and 89.88% line coverage, with all UI components at 100%. Four Playwright tests cover the main browser journeys, including loading the application, starting and completing a quiz, displaying answer feedback and showing the final score. Separate GitHub Actions workflows run the Vitest and Playwright suites on pull requests and changes to the main branch.",
+        "Vitest and React Testing Library cover quiz components, state transitions, question validation and answer shuffling, alongside server-function tests for request validation, response normalisation, malformed data, failures and timeouts. Playwright runs against a local Vite server with mocked function responses, covering setup, completion, answer review, missed-question retries, replay, keyboard navigation, phone and desktop layouts, and timeout recovery. GitHub Actions runs the automated suites, with Playwright pinned to Ubuntu 24.04. Coverage is generated from the current checkout rather than presented as a fixed percentage.",
 
       features: [
         "Seventeen developer-focused quiz categories",
@@ -145,11 +146,16 @@ export const featuredProjects: FeaturedProject[] = [
         "API key protected through server environment variables",
         "Normalised and shuffled answer options",
         "Immediate correct and incorrect answer feedback",
-        "Live score tracking and final results",
+        "Live score tracking and question progress",
+        "Answer review after each completed round",
+        "Retry missed questions without another API request",
+        "Replay with original settings or return to setup",
+        "Keyboard focus management and reduced-motion support",
+        "Validated proxy requests with server and browser timeouts",
         "Empty-response and request-failure handling",
         "Restartable quiz journey",
-        "49 Vitest and React Testing Library tests",
-        "Four Playwright end-to-end tests",
+        "Vitest component, integration and server-function tests",
+        "Mocked Playwright browser journeys",
         "Automated test workflows with GitHub Actions",
         "Modular Sass architecture",
       ],
@@ -172,13 +178,13 @@ export const featuredProjects: FeaturedProject[] = [
     id: "workout-builder",
     title: "Workout Builder",
     description:
-      "A seven-day workout planner with a searchable exercise library, custom exercises, editable sets and reps, browser persistence and approximately 90% test coverage.",
+      "A seven-day workout planner with a searchable exercise library backed by an Express API and Turso database, custom exercises, editable sets and reps, and a weekly plan saved in the browser.",
     value: "7-Day",
     label: "Workout Planner",
-    badges: ["React 19", "localStorage", "22 Jest Tests", "~90% Coverage"],
+    badges: ["React 19", "Express API", "Turso", "Render & Netlify"],
     image: {
       src: "/images/projects/workout-builder-banner.webp",
-      alt: "Workout Builder interface showing an exercise library and a seven-day weekly workout plan.",
+      alt: "Workout Builder desktop and mobile mockups showing the exercise library, weekly plan, and editable sets and reps.",
     },
     links: {
       live: "https://workoutroutinebuilder.netlify.app/",
@@ -187,16 +193,16 @@ export const featuredProjects: FeaturedProject[] = [
     },
     caseStudy: {
       overview:
-        "Workout Builder is a React 19 application for creating a complete weekly exercise routine in the browser. Users can search the built-in exercise library, create their own exercises, assign them to any day of the week and customise the number of sets and repetitions. Both the exercise library and weekly plan persist between sessions without requiring an account.",
+        "Workout Builder is a React 19 application for creating a complete weekly exercise routine in the browser. Users can search the built-in exercise library, create their own exercises, assign them to any day of the week and customise the number of sets and repetitions. The exercise library is stored in Turso through a Node.js and Express API, while the weekly plan stays in localStorage. The frontend is hosted on Netlify and proxies production API requests to Render.",
 
       challenge:
-        "The main challenge was keeping seven independent daily plans, a customisable exercise library and editable workout values synchronised through one interface. Updates needed to affect only the selected day or exercise while remaining predictable, responsive and persistent after the browser was closed.",
+        "The main challenge was keeping seven independent daily plans, a customisable exercise library and editable workout values synchronised through one interface. The move from browser-only exercise storage to an API-backed library also needed to preserve existing custom exercises, handle loading and failed requests, and keep the weekly plan available locally.",
 
       architecture:
-        "The application uses React state to manage the exercise library and a weekly object containing an exercise array for each day. Functional state updates create new arrays and objects when exercises are assigned, edited or removed. Lazy state initialisers restore the saved library and weekly plan from localStorage, while separate effects save both collections whenever they change. The interface is divided into focused ExerciseList and Planner components.",
+        "React state manages the exercise library and seven daily workout arrays. The frontend loads, creates and deletes library exercises through an Express API backed by Turso via the libSQL client. A one-time import transfers an existing localStorage exercise library to the API. Loading states, request cancellation and a retry action handle library requests. The weekly routine continues to load and save locally through localStorage. Netlify rewrites /api requests to the Render-hosted backend.",
 
       testing:
-        "The project has 22 passing Jest and React Testing Library tests across four test suites. They cover the default exercise data, component rendering, empty states, search and category filtering, custom exercise creation and deletion, day assignment, exercise removal, sets and reps updates, weekly exercise counts and localStorage persistence. The current report shows 89.85% statement coverage and 93.65% line coverage, with 100% statement coverage across the Planner and ExerciseList components. GitHub Actions runs the complete Jest coverage suite for pushes and pull requests.",
+        "The repository uses Jest and React Testing Library for exercise data, library and planner components, and application interactions, including day assignment, exercise removal, sets and reps updates and weekly-plan persistence. GitHub Actions runs the Jest suite. The Express and Turso backend is a recent extension of the original browser-based application; the existing frontend coverage figures do not establish backend test coverage.",
 
       features: [
         "Seven-day workout planning",
@@ -208,10 +214,12 @@ export const featuredProjects: FeaturedProject[] = [
         "Automatic weekly exercise count",
         "Empty-state guidance for every day",
         "Weekly plan persistence with localStorage",
-        "Custom exercise persistence with localStorage",
+        "Exercise library persistence in Turso through an Express API",
+        "One-time import of an existing browser exercise library",
+        "Exercise-library loading, error and retry states",
+        "Netlify API proxy to the Render-hosted backend",
         "Responsive one, three and seven-column planner layouts",
-        "22 Jest and React Testing Library tests",
-        "Approximately 90% statement coverage",
+        "Jest and React Testing Library test suite",
         "Automated test coverage checks with GitHub Actions",
       ],
 
@@ -221,6 +229,10 @@ export const featuredProjects: FeaturedProject[] = [
         "Vite",
         "Tailwind CSS 4",
         "localStorage",
+        "Node.js",
+        "Express 5",
+        "Turso / libSQL",
+        "Render",
         "Jest",
         "React Testing Library",
         "Testing Library User Event",
@@ -233,18 +245,18 @@ export const featuredProjects: FeaturedProject[] = [
     id: "cinevault",
     title: "CineVault",
     description:
-      "A React movie browser with TMDB category discovery, rating filters, flexible sorting, 95.52% test coverage and Playwright-tested user journeys.",
-    value: "95.52%",
-    label: "Test Coverage",
+      "A React movie discovery app with debounced title search, keyboard-accessible live suggestions, TMDB category browsing, rating filters and flexible sorting.",
+    value: "Live",
+    label: "Movie Search",
     badges: [
       "React 19",
       "TMDB API",
-      "30 Vitest Tests",
+      "Live Suggestions",
       "Playwright E2E",
     ],
     image: {
       src: "/images/projects/cinevault-banner.webp",
-      alt: "CineVault interface showing a responsive grid of films with rating and sorting controls.",
+      alt: "CineVault desktop and mobile mockups showing movie search, poster grids, rating filters and sorting controls.",
     },
     links: {
       live: "https://cinevaultmoviesapp.netlify.app/",
@@ -253,15 +265,20 @@ export const featuredProjects: FeaturedProject[] = [
     },
     caseStudy: {
       overview:
-        "CineVault is a React 19 movie discovery application powered by the TMDB API. It is a refactored rebuild of an earlier movie project, created to improve the code structure, deployment reliability and automated testing. Users can browse popular, top-rated and upcoming films, filter results by rating and change how the current collection is ordered.",
+        "CineVault is a React 19 movie discovery application powered by the TMDB API. It is a refactored rebuild of an earlier movie project, created to improve the code structure, deployment reliability and automated testing. Users can browse popular, top-rated and upcoming films or search by title with live suggestions, then filter and sort the results.",
       challenge:
-        "The main challenge was coordinating API-driven categories with local filtering and sorting while keeping the interface predictable. Changing category needed to load a new TMDB collection, rating filters needed to remain reversible, and multiple sorting options needed to update the visible movies without mutating the original API results.",
+        "The main challenge was coordinating API-driven categories with local filtering and sorting while keeping the interface predictable. Live search needed to coordinate debounced requests, immediate submission and keyboard-accessible suggestions. Clearing search or changing category needed to restore category browsing, while filters and sorting remained usable for both search and category results.",
       architecture:
-        "The application keeps the active movie category in the top-level App component and delegates discovery behaviour to MovieList. MovieList fetches the selected TMDB endpoint, stores both the original response and the visible movie collection, and manages loading, rating and sorting state. Focused Header, FilterMovies, SortMovies, MovieCard and MovieCardSkeleton components separate navigation, controls and presentation. The TMDB key is supplied through a Vite environment variable and requests are made directly from the browser.",
+        "The application keeps the active movie category in the top-level App component and delegates discovery behaviour to MovieList. MovieList fetches the selected TMDB endpoint, stores both the original response and the visible movie collection, and manages loading, rating and sorting state. Focused Header, FilterMovies, SortMovies, MovieCard and MovieCardSkeleton components separate navigation, controls and presentation. A Headless UI combobox presents up to five suggestions with posters and release years. Title search uses a 300 ms debounce, with immediate submission through Enter or Search. Clearing the query restores the current category, and category navigation resets search. The TMDB key is supplied through a Vite environment variable and requests are made directly from the browser.",
       testing:
-        "The project has 30 passing Vitest and React Testing Library tests across six files. They cover category endpoints, loading skeletons, rendered movie details, TMDB links, rating filters, filter toggling, sorting controls, empty results and navigation states. The current report shows 95.52% statement and line coverage, 96% branch coverage and 95.65% function coverage. Four Playwright tests run against the deployed Netlify site in Chromium and cover page loading, rating filtering and sorting. Separate GitHub Actions workflows run both test suites for pushes and pull requests.",
+        "Vitest and React Testing Library cover movie discovery components and interactions, with V8 coverage generated from the current checkout. Playwright starts a local Vite server and mocks TMDB responses and images, covering page loading, rating filters, sorting, live search, immediate submission, clearing and category navigation. Suggestion tests exercise mouse and keyboard selection, dismissal, and desktop and mobile layouts. GitHub Actions runs unit, integration and browser tests for pushes and pull requests targeting main or master.",
       features: [
         "Popular, top-rated and upcoming TMDB collections",
+        "Debounced title search with immediate Enter or Search submission",
+        "Up to five live suggestions with posters and release years",
+        "Mouse and keyboard suggestion selection with Headless UI",
+        "Clear search and category navigation restore category browsing",
+        "Poster fallbacks and request-error messages",
         "Rating filters for movies scored 6+, 7+ or 8+",
         "Sorting by release date and rating",
         "Ascending and descending title sorting",
@@ -269,16 +286,16 @@ export const featuredProjects: FeaturedProject[] = [
         "Loading skeletons while TMDB data is fetched",
         "Empty state when no films match the rating filter",
         "Direct links from movie cards to TMDB",
-        "30 Vitest and React Testing Library tests",
-        "Four Playwright end-to-end tests",
-        "95.52% statement and line coverage",
+        "Vitest and React Testing Library tests with V8 coverage",
+        "Mocked Playwright tests for browsing and live search",
         "Automated test workflows with GitHub Actions",
         "Production deployment on Netlify",
       ],
       techStack: [
         "React 19",
         "JavaScript",
-        "Vite 6",
+        "Vite",
+        "Headless UI",
         "CSS",
         "TMDB API",
         "Vitest",

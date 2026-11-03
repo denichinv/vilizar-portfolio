@@ -88,8 +88,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <Image
           src={project.image.src}
           alt={project.image.alt}
-          width={1280}
-          height={720}
+          width={1536}
+          height={1024}
           className="w-full object-cover"
           priority
         />

@@ -30,11 +30,11 @@ export default function ProjectCard({
       <Image
         src={src}
         alt={alt}
-        width={1280}
-        height={720}
+        width={1536}
+        height={1024}
         priority={priority}
         sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1279px) calc((100vw - 5rem) / 2), 576px"
-        className="aspect-video w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+        className="aspect-[3/2] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
       />
 
       <div className="flex flex-1 flex-col p-6">
