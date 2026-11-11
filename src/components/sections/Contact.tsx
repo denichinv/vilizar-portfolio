@@ -69,9 +69,10 @@ export default function Contact() {
             </h2>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[color:var(--text-muted)]">
-              If you&apos;re hiring for a front-end role, working on a product,
-              or just want to talk React, TypeScript and clean UI, I&apos;d be
-              happy to hear from you.
+              Whether you need a new website, want to improve an existing one,
+              or you&apos;re hiring for a front-end role, tell me what
+              you&apos;re working on and I&apos;ll help you decide the next
+              step.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -80,7 +81,7 @@ export default function Contact() {
                 className="inline-flex items-center gap-2 rounded-[var(--radius-sm)] bg-[color:var(--accent)] px-5 py-3 text-sm font-medium text-black transition hover:opacity-90"
               >
                 <Mail size={16} aria-hidden="true" />
-                Email me
+                Discuss your project
               </a>
 
               <a
